@@ -21,11 +21,15 @@ CREATE TABLE PersonPet (
 INSERT INTO Person (id, firstName, lastName, age)
 	VALUES	(0, "Zed", "Shaw", 37);
 
-INSERT INTO Pet (id, name, breed, age, dead)
-	VALUES (0, "Fluffy", "Unicorn", 1000, 0);
+INSERT INTO Person VALUES (1, "TED", "Bean", 38);
+
+INSERT INTO Pet VALUES (0, "Fluffy", "Unicorn", 1000, 0);
 
 INSERT INTO Pet VALUES (1, "Gigantor", "Robot", 1, 1);
 
 INSERT INTO Pet VALUES (2, "Bean", "Robochicken", 1, 0);
 
-INSERT INTO Person VALUES (1, "TED", "Bean", 38);
+INSERT INTO PersonPet VALUES (0, 1);
+
+INSERT INTO PersonPet VALUES (0, 2);
+

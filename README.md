@@ -3,7 +3,8 @@ LearnSQLTheHardWay
 
 Introduction
 ------------
-A personal practice where I go through the code labs provided in this tutorial.
+A personal practice where I go through the code labs provided in this tutorial
+to learn about SQL. I am currently running this on SQLite version 3.7.13
 
 Support
 -------

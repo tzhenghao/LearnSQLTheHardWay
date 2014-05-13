@@ -71,3 +71,10 @@ INSERT INTO Pet VALUES (1, "Gigantor", "Robot", 1, 0);
 /* The robot lives! */
 SELECT * FROM Pet;
 
+/* Remove all tables */
+DROP TABLE Person;
+
+DROP TABLE PersonPet;
+
+DROP TABLE Pet;
+

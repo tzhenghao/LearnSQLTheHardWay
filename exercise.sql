@@ -40,3 +40,11 @@ SELECT name, age FROM Pet;
 SELECT name, age FROM Pet where dead = 0;
 
 SELECT * FROM Person WHERE firstName != "Zed";
+
+SELECT name FROM Pet WHERE age > 10;
+
+SELECT firstName, age FROM Person WHERE age > 19;
+
+SELECT firstName, age FROM Person WHERE firstName != "zed" AND age > 19;
+
+SELECT firstName, age FROM Person WHERE firstName != "Zed" OR age > 19 AND lastName != NULL;

@@ -33,3 +33,10 @@ INSERT INTO PersonPet VALUES (0, 1);
 
 INSERT INTO PersonPet VALUES (0, 2);
 
+SELECT * FROM Person;
+
+SELECT name, age FROM Pet;
+
+SELECT name, age FROM Pet where dead = 0;
+
+SELECT * FROM Person WHERE firstName != "Zed";

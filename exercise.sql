@@ -25,3 +25,7 @@ INSERT INTO Pet (id, name, breed, age, dead)
 	VALUES (0, "Fluffy", "Unicorn", 1000, 0);
 
 INSERT INTO Pet VALUES (1, "Gigantor", "Robot", 1, 1);
+
+INSERT INTO Pet VALUES (1, "Bean", "Robochicken", 1, 0);
+
+INSERT INTO Person VALUES (0, "TED", "Bean", 38);

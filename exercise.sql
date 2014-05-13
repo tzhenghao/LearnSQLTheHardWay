@@ -71,10 +71,29 @@ INSERT INTO Pet VALUES (1, "Gigantor", "Robot", 1, 0);
 /* The robot lives! */
 SELECT * FROM Pet;
 
+DELETE FROM Pet WHERE id IN (
+	SELECT Pet.id
+	FROM Pet, PersonPet, Person 
+	WHERE
+	Person.id = PersonPet.personID AND
+	Pet.id = PersonPet.petID AND
+	Person.firstName = "Zed"
+);
+
+SELECT * FROM Pet;
+SELECT * FROM PersonPet;
+
+DELETE FROM PersonPet
+	WHERE petID NOT IN (
+		SELECT id FROM Pet 
+	);
+
+SELECT * FROM PersonPet;
+
+
 /* Remove all tables */
 DROP TABLE Person;
 
 DROP TABLE PersonPet;
 
 DROP TABLE Pet;
-

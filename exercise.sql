@@ -71,6 +71,15 @@ INSERT INTO Pet VALUES (1, "Gigantor", "Robot", 1, 0);
 /* The robot lives! */
 SELECT * FROM Pet;
 
+UPDATE Person SET firstName = "Hilarious Guy"
+	WHERE firstName = "Zed";
+
+UPDATE Pet SET name = "Fancy Pants"
+	WHERE id = 0;
+
+SELECT * FROM Person;
+SELECT * FROM Pet;
+
 DELETE FROM Pet WHERE id IN (
 	SELECT Pet.id
 	FROM Pet, PersonPet, Person 
@@ -89,7 +98,6 @@ DELETE FROM PersonPet
 	);
 
 SELECT * FROM PersonPet;
-
 
 /* Remove all tables */
 DROP TABLE Person;

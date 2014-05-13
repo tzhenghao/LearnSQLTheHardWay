@@ -71,9 +71,11 @@ INSERT INTO Pet VALUES (1, "Gigantor", "Robot", 1, 0);
 /* The robot lives! */
 SELECT * FROM Pet;
 
+/* Name change */
 UPDATE Person SET firstName = "Hilarious Guy"
 	WHERE firstName = "Zed";
 
+/* Another name change */
 UPDATE Pet SET name = "Fancy Pants"
 	WHERE id = 0;
 
@@ -81,10 +83,21 @@ SELECT * FROM Person;
 
 SELECT * FROM Pet;
 
+/* Revert the name change */
 UPDATE Person SET firstName = "Zed" 
 	WHERE id = 0;
 
 SELECT * FROM Person;
+
+INSERT INTO Pet VALUES (50, "Chigg", "chong", 1, 1);
+INSERT INTO Pet VALUES (51, "zhigg", "choeg", 2, 1);
+INSERT INTO Pet VALUES (52, "ahigg", "whong", 2, 1);
+
+/* Rename all dead animals to DECEASED */
+UPDATE Pet SET name = "DECEASED"
+	WHERE dead = 1;
+
+SELECT * FROM Pet;
 	
 DELETE FROM Pet WHERE id IN (
 	SELECT Pet.id

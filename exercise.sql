@@ -48,3 +48,26 @@ SELECT firstName, age FROM Person WHERE age > 19;
 SELECT firstName, age FROM Person WHERE firstName != "zed" AND age > 19;
 
 SELECT firstName, age FROM Person WHERE firstName != "Zed" OR age > 19 AND lastName != NULL;
+
+SELECT Pet.id, Pet.name, Pet.age, Pet.dead
+	FROM Pet, PersonPet, Person
+	WHERE
+	Pet.id = PersonPet.petID AND
+	PersonPet.personID = Person.id AND
+	Person.firstName = "Zed";
+
+/* Make sure there's dead pets */
+SELECT name, age FROM pet WHERE dead = 1;
+
+/* aww poor robot */
+DELETE FROM Pet WHERE dead = 1;
+
+/* robot should be gone by now */
+SELECT * FROM Pet;
+
+/* let's resurrect the robot */
+INSERT INTO Pet VALUES (1, "Gigantor", "Robot", 1, 0);
+
+/* The robot lives! */
+SELECT * FROM Pet;
+

@@ -101,7 +101,7 @@ SELECT * FROM Pet;
 
 UPDATE Pet SET name = "Zed's Pet" WHERE id IN (
 
-	SELECT Pet.in 
+	SELECT Pet.id 
 		FROM Pet, PersonPet, Person
 		WHERE
 		Person.id = PersonPet.personID AND
@@ -111,7 +111,7 @@ UPDATE Pet SET name = "Zed's Pet" WHERE id IN (
 
 SELECT * FROM Pet;
 
-DELETE FROM Pet WHERE id IN (
+UPDATE FROM Pet WHERE id IN (
 	SELECT Pet.id
 	FROM Pet, PersonPet, Person 
 	WHERE

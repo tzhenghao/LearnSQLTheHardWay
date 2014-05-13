@@ -78,8 +78,14 @@ UPDATE Pet SET name = "Fancy Pants"
 	WHERE id = 0;
 
 SELECT * FROM Person;
+
 SELECT * FROM Pet;
 
+UPDATE Person SET firstName = "Zed" 
+	WHERE id = 0;
+
+SELECT * FROM Person;
+	
 DELETE FROM Pet WHERE id IN (
 	SELECT Pet.id
 	FROM Pet, PersonPet, Person 
@@ -90,6 +96,7 @@ DELETE FROM Pet WHERE id IN (
 );
 
 SELECT * FROM Pet;
+
 SELECT * FROM PersonPet;
 
 DELETE FROM PersonPet

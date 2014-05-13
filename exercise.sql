@@ -4,3 +4,16 @@ CREATE TABLE Person(
 	lastName TEXT,
 	age INTEGER
 );
+
+CREATE TABLE Pet (
+	id INTEGER PRIMARY KEY,
+	name TEXT,
+	breed TEXT,
+	age INTEGER,
+	dead INTEGER
+);
+
+CREATE TABLE PersonPet (
+	personID INTEGER,
+	petID INTEGER
+);

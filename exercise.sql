@@ -149,9 +149,31 @@ DELETE FROM PersonPet
 
 SELECT * FROM PersonPet;
 
-/* Remove all tables */
-DROP TABLE Person;
+/* Remove all tables if they exist */
+DROP TABLE IF EXISTS Person;
 
-DROP TABLE PersonPet;
+/* Recreate it to work with it. */
+CREATE TABLE Person (
+	id INTEGER PRIMARY KEY,
+	firstName TEXT,
+	lastName TEXT,
+	age INTEGER
+);
 
-DROP TABLE Pet;
+/* Rename the table to peoples */
+ALTER TABLE Person RENAME TO Peoples;
+
+/* Add a hatred column to peoples */
+ALTER TABLE Peoples ADD COLUMN hatred INTEGER;
+
+/* Rename peoples back to person */
+ALTER TABLE Peoples RENAME TO Person;
+
+.schema Person
+
+DROP TABLE IF EXISTS Person;
+
+DROP TABLE IF EXISTS PersonPet;
+
+
+DROP TABLE IF EXISTS Pet;

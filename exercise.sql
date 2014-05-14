@@ -1,3 +1,4 @@
+
 CREATE TABLE Person (
 	id INTEGER PRIMARY KEY,
 	firstName TEXT,
@@ -160,6 +161,7 @@ CREATE TABLE Person (
 	age INTEGER
 );
 
+BEGIN;
 /* Rename the table to peoples */
 ALTER TABLE Person RENAME TO Peoples;
 
@@ -171,9 +173,11 @@ ALTER TABLE Peoples RENAME TO Person;
 
 .schema Person
 
+ROLLBACK;
 DROP TABLE IF EXISTS Person;
 
 DROP TABLE IF EXISTS PersonPet;
 
 
 DROP TABLE IF EXISTS Pet;
+

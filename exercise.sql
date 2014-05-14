@@ -111,7 +111,25 @@ UPDATE Pet SET name = "Zed's Pet" WHERE id IN (
 
 SELECT * FROM Pet;
 
-UPDATE FROM Pet WHERE id IN (
+INSERT INTO PersonPet VALUES (0, 50);
+INSERT INTO PersonPet VALUES (0, 51);
+INSERT INTO PersonPet VALUES (0, 52);
+
+/* Update dead pets owned by Zed to Zed's dead pet */
+UPDATE Pet SET name = "Zed's Dead pet" WHERE id IN (
+	
+	SELECT Pet.id 
+		FROM Pet, PersonPet, Person 
+		WHERE 
+		Person.id = PersonPet.personID AND
+		Pet.id = PersonPet.petID AND
+		Person.firstName = "Zed" AND
+		pet.dead = 1
+);
+
+SELECT * FROM Pet;
+
+DELETE FROM Pet WHERE id IN (
 	SELECT Pet.id
 	FROM Pet, PersonPet, Person 
 	WHERE
